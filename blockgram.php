@@ -2,7 +2,7 @@
 /*
 Plugin Name: BlockGram
 Plugin URI: http://www.todoinstagram.com
-Description: BlockGram is a Wordpress plugin witch allow you hide post content to visitors who not follow you on Instagram.
+Description: BlockGram is a Wordpress plugin that allow you hide post content to visitors who not follow you on Instagram.
 Version: 0.8.0
 Author: Grafite
 Author URI: http://www.twitter.com/canterozamorano
@@ -10,6 +10,8 @@ Text Domain: blockgram
 License: A "Slug" license name e.g. GPL2
 */
 
+
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 require_once 'instagram-php-api/Instagram.php';
 
@@ -40,7 +42,7 @@ class BlockGramPlugin extends SanityPluginFramework {
 	 *  Loads /plugin/css/bgram-admin-style.css
 	*/
 	var $admin_css = array('bgram-admin-style');
-	
+
 	/*
 	 * Key name to save admin parameters in wp-option table
 	 */
@@ -99,7 +101,8 @@ class BlockGramPlugin extends SanityPluginFramework {
         check_admin_referer( "activate-plugin_{$plugin}" );
 
         //Create redirect URI page
-		self::bgramCreateRedirectPage();
+		BlockGramPlugin::bgramCreateRedirectPage();
+
 	}
 
 	/*
@@ -111,28 +114,6 @@ class BlockGramPlugin extends SanityPluginFramework {
             return;
         $plugin = isset( $_REQUEST['plugin'] ) ? $_REQUEST['plugin'] : '';
         check_admin_referer( "deactivate-plugin_{$plugin}" );	
-	}
-
-	/*
-	 *		Run during the unistalling of the plugin
-	*/
-	public static function uninstall() {
-	
-		if ( ! current_user_can( 'activate_plugins' ) )
-            return;
-        check_admin_referer( 'bulk-plugins' );
-
-        // Important: Check if the file is the one
-        // that was registered during the uninstall hook.
-        if ( __FILE__ != WP_UNINSTALL_PLUGIN )
-            return;
-
-        //Remove redirect URI page
-        wp_delete_post( get_page_by_title( 'Blockgram Redirect Page' ) );
-
-        //Delete plugin options from wp-options table
-        delete_option( $this->dbOptionKey );
-        delete_option( $this->dbFrontEndOptionKey );
 	}
 
 	/*
@@ -516,19 +497,17 @@ class BlockGramPlugin extends SanityPluginFramework {
 			$my_post['post_author'] = 1;
 			$my_post['post_type'] = 'page';
 		
-			//Insert the post into the database
-			wp_insert_post( $my_post );
+			//Publish the page and insert page ID into the database
+			$post_id = wp_insert_post( $my_post );
+			update_option( 'BlockGramPlugin_Redirect_Page_ID', $post_id );
 		}
 	}
 }
 
 
 	/**
-	* Configuramos p‡gina de redireccionamiento
-	* 
+	* Load redirect page template
 	**/
-	
-	//Carga la plantilla personalizada de Blockgram Redirect Page
 	function home_mobile_redirect(){
 		if ( is_page( 'Blockgram Redirect Page' )  ) {
 		    include( dirname(__FILE__) . '/views/blockgram-redirect.php' );
@@ -547,7 +526,6 @@ class BlockGramPlugin extends SanityPluginFramework {
 
 		register_activation_hook(   __FILE__, array( 'BlockGramPlugin', 'activate' ) );
 		register_deactivation_hook( __FILE__, array( 'BlockGramPlugin', 'deactivate' ) );
-		register_uninstall_hook(    __FILE__, array( 'BlockGramPlugin', 'uninstall' ) );
 		
 		add_action('plugins_loaded', array( 'BlockGramPlugin', 'init'));
 		
