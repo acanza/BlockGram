@@ -1,0 +1,50 @@
+# Copyright (C) 2011 Optingram
+# This file is distributed under the same license as the WordPress Importer package.
+msgid ""
+msgstr ""
+"Project-Id-Version: Optingram 1.0\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/tag/wordpress-importer\n"
+"POT-Creation-Date: 2011-07-16 15:45:12+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2010-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+
+
+#. Plugin Name of the plugin/theme
+msgid "Optingram"
+msgstr ""
+
+#. Follow buttom message 
+msgid ""
+"Follow to"
+msgstr ""
+
+#. Admin client data title
+msgid "These are your client data"
+msgstr ""
+
+#. Message of application authorization
+msgid "Your application is authorized, have fun!"
+msgstr ""
+
+#. Block content box title
+msgid "Message to unlock hidden content"
+msgstr ""
+
+msgid "Instagram login"
+msgstr ""
+
+msgid "Profile photo"
+msgstr ""
+
+msgid "Reset settings"
+msgstr ""
+
+msgid "Save settings"
+msgstr ""
+
+msgid "Optingram setting pannel"
+msgstr ""

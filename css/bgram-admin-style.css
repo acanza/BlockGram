@@ -1,0 +1,27 @@
+.bgram-container{
+	background-color: #ECF3E1;
+    border: 1px solid #D3E3B9;
+    border-radius: 5px 5px 5px 5px;
+    color: #5F5F5F;
+    padding: 20px;
+    margin-top: 10px;
+}
+
+.blockgram-form-layout{
+    box-sizing: border-box;
+}
+
+.blockgram-form-horizontal{
+    max-width: 1200px;
+}
+
+.bgram-divider{
+	background: url('../images/divider.png') center no-repeat;
+	height: 40px;
+}
+
+.profile-picture{
+	border: 7px solid #C5D0A2;
+    height: 150px;
+    width: 150px;
+}

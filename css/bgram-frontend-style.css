@@ -1,0 +1,45 @@
+.blockgram-container-hidden-content{
+	background-color: #E9F1DD;
+    border: 1px solid #EAE8E3;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    text-align: center;
+	-webkit-hyphens: none;
+   	-moz-hyphens: none;
+    hyphens: none;
+    padding-top: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 5px;
+}
+
+a.blockgram-follow-button{
+	background: url('../images/instagram-logo.png' ) 4px center no-repeat #9EC264;
+	text-decoration: none;
+	color: white !important;
+	transition: all 0.15s ease-in;
+	-moz-transition: all 0.15s ease-in; /* Firefox 4 */
+	-webkit-transition: all 0.15s ease-in; /* Safari and Chrome */
+	-o-transition: all 0.15s ease-in; /* Opera */
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-right: 8px;
+	padding-left: 39px;
+}
+
+a.blockgram-follow-button:hover{
+	background-color: #7EAE30;
+	color: white;
+}
+
+.blockgram-container-hidden-content .blockgram-credits{
+	font-size: 8pt;
+	color: #B2CE96;
+	text-align: right;
+	margin-top: 30px;
+	margin-bottom: 5px;
+}
+
+.blockgram-container-hidden-content .blockgram-credits a{
+	color: #8EB17E;
+}
