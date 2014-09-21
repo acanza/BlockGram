@@ -2,8 +2,8 @@
 /*
 Plugin Name: BlockGram
 Plugin URI: http://www.todoinstagram.com
-Description: BlockGram is a Wordpress plugin witch allow you increase your Instagram followers.
-Version: 1.0.0
+Description: BlockGram is a Wordpress plugin witch allow you hide post content to visitors who not follow you on Instagram.
+Version: 0.8.0
 Author: Grafite
 Author URI: http://www.twitter.com/canterozamorano
 Text Domain: blockgram

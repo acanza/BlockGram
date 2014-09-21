@@ -1,4 +1,4 @@
 BlockGram
 =========
 
-BlockGram es un plugin para WordPress con el que los visitantes a tu sitio deberán seguirte en Instagram para poder desbloquear el contenido.
+BlockGram is a WordPress plugin that allow you hide post content to visitors who not follow you on Instagram.
